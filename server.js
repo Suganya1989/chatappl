@@ -4,7 +4,7 @@ var url= require("url");
 var fs=require("fs");
 var path= require("path");
 
-
+var port = process.env.PORT || 3838;
 
 var server=http.createServer(function(request,response)
 {
@@ -40,7 +40,7 @@ var server=http.createServer(function(request,response)
 
 });
 
-server.listen(3838);
+server.listen(port);
 
 io.listen(server);
 
