@@ -11,7 +11,6 @@ var server=http.createServer(function(request,response)
 {
     var pathn= url.parse(request.url).pathname;
     var combinePath= __dirname+'\\'+path.basename(pathn);
-    response.write("hello");
     console.log(combinePath);
 
     switch(path.basename(pathn)){
