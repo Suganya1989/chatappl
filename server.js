@@ -1,21 +1,15 @@
 var io = require("socket.io")();
 var http = require("http");
-var url = require("url");
-var fs = require("fs");
-var path = require("path");
-var send=require('send');
+var static = require('node-static');
 
 var port = process.env.PORT || 3838;
+var file = new static.Server('./public');
+
 
 var server = http.createServer(function(request, response) {
-    function error(err) {
-        response.statusCode = err.status;
-        response.end(http.STATUS_CODES[err.status]);
-    }
-
-    send(request,request.url,{root:__dirname})
-      .on('error', error)
-      .pipe(response);
+   request.addListener('end', function () {
+        file.serve(request, response);
+    }).resume();
 });
 
 server.listen(port);
