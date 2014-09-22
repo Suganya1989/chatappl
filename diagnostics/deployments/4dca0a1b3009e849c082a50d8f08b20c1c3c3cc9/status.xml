@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<deployment>
+  <id>4dca0a1b3009e849c082a50d8f08b20c1c3c3cc9</id>
+  <author>suganya1989</author>
+  <deployer>suganya1989</deployer>
+  <authorEmail>suganya1989@gmail.com</authorEmail>
+  <message>check in</message>
+  <progress></progress>
+  <status>Success</status>
+  <statusText></statusText>
+  <lastSuccessEndTime>2014-09-22T10:04:49.6910708Z</lastSuccessEndTime>
+  <receivedTime>2014-09-22T10:04:43.8664717Z</receivedTime>
+  <startTime>2014-09-22T10:04:45.1225104Z</startTime>
+  <endTime>2014-09-22T10:04:49.6910708Z</endTime>
+  <complete>True</complete>
+  <is_temp>False</is_temp>
+  <is_readonly>False</is_readonly>
+</deployment>

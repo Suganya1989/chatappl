@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<deployment>
+  <id>b9af39e8339d4aca0d8bd46b33d63c247914aff5</id>
+  <author>suganya1989</author>
+  <deployer>suganya1989</deployer>
+  <authorEmail>suganya1989@gmail.com</authorEmail>
+  <message>Merge branch 'master' of https://github.com/Suganya1989/chatappl</message>
+  <progress></progress>
+  <status>Success</status>
+  <statusText></statusText>
+  <lastSuccessEndTime>2014-09-22T09:35:31.93328Z</lastSuccessEndTime>
+  <receivedTime>2014-09-22T09:35:14.4346865Z</receivedTime>
+  <startTime>2014-09-22T09:35:19.0615454Z</startTime>
+  <endTime>2014-09-22T09:35:31.93328Z</endTime>
+  <complete>True</complete>
+  <is_temp>False</is_temp>
+  <is_readonly>False</is_readonly>
+</deployment>

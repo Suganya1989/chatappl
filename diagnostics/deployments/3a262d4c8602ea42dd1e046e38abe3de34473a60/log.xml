@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<entries>
+  <entry time="2014-09-22T10:03:31.8069426Z" id="6b1f6904-9f44-4648-8d02-ba6fefb20811" type="0">
+    <message>Updating branch 'master'.</message>
+  </entry>
+  <entry time="2014-09-22T10:03:33.8116428Z" id="52869a81-debd-4ec0-934c-c6a0be58ab0b" type="0">
+    <message>Updating submodules.</message>
+  </entry>
+  <entry time="2014-09-22T10:03:33.874136Z" id="23374214-3f1b-4a53-a437-59aa4fb507b4" type="0">
+    <message>Preparing deployment for commit id '3a262d4c86'.</message>
+  </entry>
+  <entry time="2014-09-22T10:03:34.0460228Z" id="3f699256-76fe-48a2-bc85-cfd8a4905310" type="0">
+    <message>Generating deployment script.</message>
+    <entry time="2014-09-22T10:03:34.0928887Z" id="6f80108d-8fe6-4b80-8d16-7ae59cd3929f" type="0">
+      <message>Using cached version of deployment script (command: 'azure -y --no-dot-deployment -r "D:\home\site\repository" -o "D:\home\site\deployments\tools" --node --sitePath "D:\home\site\repository"').</message>
+    </entry>
+  </entry>
+  <entry time="2014-09-22T10:03:34.1397651Z" id="cd59f0d3-892f-4b1a-b11a-5be7c97b151a" type="1">
+    <message>Running deployment command...</message>
+    <entry time="2014-09-22T10:03:34.1553966Z" id="51acfc5f-4497-4e6c-853f-c32ce583b11b" type="0">
+      <message>Command: "D:\home\site\deployments\tools\deploy.cmd"</message>
+    </entry>
+    <entry time="2014-09-22T10:03:34.608529Z" id="41e1cf32-40db-41d7-b774-0d0ea7d4c4d4" type="0">
+      <message>Handling node.js deployment.</message>
+    </entry>
+    <entry time="2014-09-22T10:03:34.9070585Z" id="804831e9-5916-4bd0-8ed7-a2e5e601da65" type="0">
+      <message>KuduSync.NET from: 'D:\home\site\repository' to: 'D:\home\site\wwwroot'</message>
+    </entry>
+    <entry time="2014-09-22T10:03:34.9226493Z" id="04a915a2-f55c-4105-a282-ed15901e4d28" type="0">
+      <message>Deleting file: 'diagnostics.zip'</message>
+    </entry>
+    <entry time="2014-09-22T10:03:34.9383214Z" id="ffbc800a-a9ea-4e21-ae0c-727e6e30d0f0" type="0">
+      <message>Deleting file: 'diagnostics\deployments\active'</message>
+    </entry>
+    <entry time="2014-09-22T10:03:34.9539375Z" id="a655877a-4c38-4865-9ffb-b177df7848d3" type="0">
+      <message>Deleting file: 'diagnostics\deployments\b9af39e8339d4aca0d8bd46b33d63c247914aff5\log.xml'</message>
+    </entry>
+    <entry time="2014-09-22T10:03:34.9695202Z" id="117ce251-7896-4d65-90ca-504fd17e8632" type="0">
+      <message>Deleting file: 'diagnostics\deployments\b9af39e8339d4aca0d8bd46b33d63c247914aff5\manifest'</message>
+    </entry>
+    <entry time="2014-09-22T10:03:34.9851426Z" id="fee2da2f-11b1-4898-88b4-665565e26868" type="0">
+      <message>Deleting file: 'diagnostics\deployments\b9af39e8339d4aca0d8bd46b33d63c247914aff5\status.xml'</message>
+    </entry>
+    <entry time="2014-09-22T10:03:34.9851426Z" id="82fae4ff-9eda-4ce4-ba9e-93d938e83d24" type="0">
+      <message>Deleting directory: 'diagnostics\deployments\b9af39e8339d4aca0d8bd46b33d63c247914aff5'</message>
+    </entry>
+    <entry time="2014-09-22T10:03:35.0007689Z" id="5652ca6a-193b-4fb2-bb1b-b2bcc435dc10" type="0">
+      <message>Deleting file: 'diagnostics\deployments\tools\deploymentCacheKey'</message>
+    </entry>
+    <entry time="2014-09-22T10:03:35.0163969Z" id="c55453e2-e5c8-49a7-8a89-902f814b73aa" type="0">
+      <message>Deleting directory: 'diagnostics\deployments\tools'</message>
+    </entry>
+    <entry time="2014-09-22T10:03:35.0320171Z" id="0c3b4ffc-8d4f-4be2-a358-fe452ecb2b59" type="0">
+      <message>Deleting directory: 'diagnostics\deployments'</message>
+    </entry>
+    <entry time="2014-09-22T10:03:35.0476421Z" id="4b8e732d-22b4-4c66-987c-5ae46ecd5782" type="0">
+      <message>Deleting file: 'diagnostics\LogFiles\eventlog.xml'</message>
+    </entry>
+    <entry time="2014-09-22T10:03:35.0632683Z" id="3f31e706-8564-496e-99d3-bba3cb13e605" type="0">
+      <message>Deleting file: 'diagnostics\LogFiles\Application\3b8c72-10268-stderr-1411378703975.txt'</message>
+    </entry>
+    <entry time="2014-09-22T10:03:35.0788988Z" id="60511a90-9f1f-4e01-ab5f-fbe05690a6ec" type="0">
+      <message>Deleting file: 'diagnostics\LogFiles\Application\3b8c72-10908-stderr-1411378607253.txt'</message>
+    </entry>
+    <entry time="2014-09-22T10:03:35.0945522Z" id="1e0b647a-71be-4648-bf35-8ce8761f3805" type="0">
+      <message>Deleting file: 'diagnostics\LogFiles\Application\3b8c72-11880-stderr-1411378701897.txt'</message>
+    </entry>
+    <entry time="2014-09-22T10:03:35.1101473Z" id="aebf61ca-801e-4d7f-bf29-aa64d6cd81ca" type="0">
+      <message>Deleting file: 'diagnostics\LogFiles\Application\3b8c72-11896-stderr-1411378612824.txt'</message>
+    </entry>
+    <entry time="2014-09-22T10:03:35.1257786Z" id="08660986-7954-4560-9345-0c522bb6b4b3" type="0">
+      <message>Deleting file: 'diagnostics\LogFiles\Application\3b8c72-12240-stderr-1411378605347.txt'</message>
+    </entry>
+    <entry time="2014-09-22T10:03:35.1413979Z" id="acd87b8c-c439-443d-8d9c-0c5cd188423e" type="0">
+      <message>Deleting file: 'diagnostics\LogFiles\Application\3b8c72-12260-stderr-1411378657165.txt'</message>
+    </entry>
+    <entry time="2014-09-22T10:03:35.157021Z" id="8d456367-5a86-4a46-8741-3ce035112deb" type="0">
+      <message>Deleting file: 'diagnostics\LogFiles\Application\3b8c72-12420-stderr-1411378611402.txt'</message>
+    </entry>
+    <entry time="2014-09-22T10:03:35.1735037Z" id="a0bcdb16-5ff4-43fa-92a5-c40e71162d76" type="0">
+      <message>Deleting file: 'diagnostics\LogFiles\Application\3b8c72-13084-stderr-1411378734169.txt'</message>
+    </entry>
+    <entry time="2014-09-22T10:03:35.1882698Z" id="70f25ec7-75e1-42b6-a56b-073f1b2d67d1" type="0">
+      <message>Deleting file: 'diagnostics\LogFiles\Application\3b8c72-1316-stderr-1411378829853.txt'</message>
+    </entry>
+    <entry time="2014-09-22T10:03:35.2038931Z" id="d9b7fa9f-708a-4681-87a6-2cda332ae5a3" type="0">
+      <message>Deleting file: 'diagnostics\LogFiles\Application\3b8c72-2748-stderr-1411378595632.txt'</message>
+    </entry>
+    <entry time="2014-09-22T10:03:35.2195255Z" id="f00b5b29-6e89-4e6c-b6e8-6493f73e23a4" type="0">
+      <message>Deleting file: 'diagnostics\LogFiles\Application\3b8c72-5276-stderr-1411378552611.txt'</message>
+    </entry>
+    <entry time="2014-09-22T10:03:35.2351429Z" id="1a9d3f70-831c-4dac-8a01-e5f84e80d432" type="0">
+      <message>Deleting file: 'diagnostics\LogFiles\Application\3b8c72-5460-stderr-1411378573163.txt'</message>
+    </entry>
+    <entry time="2014-09-22T10:03:35.2507702Z" id="72182e90-b245-474c-b350-89b42fb7686b" type="0">
+      <message>Deleting file: 'diagnostics\LogFiles\Application\3b8c72-5664-stderr-1411378615088.txt'</message>
+    </entry>
+    <entry time="2014-09-22T10:03:35.2666392Z" id="1d69ac95-ecf5-498d-b15a-142eaa0f95a7" type="0">
+      <message>Deleting file: 'diagnostics\LogFiles\Application\3b8c72-5776-stderr-1411378735732.txt'</message>
+    </entry>
+    <entry time="2014-09-22T10:03:35.2820225Z" id="48403296-420c-4c5c-b735-0353b59f9421" type="0">
+      <message>Deleting file: 'diagnostics\LogFiles\Application\3b8c72-6428-stderr-1411378617746.txt'</message>
+    </entry>
+    <entry time="2014-09-22T10:03:35.297652Z" id="7aa232a9-bcad-43b1-bc5f-85dade1ccebb" type="0">
+      <message>Deleting file: 'diagnostics\LogFiles\Application\3b8c72-7280-stderr-1411378658728.txt'</message>
+    </entry>
+    <entry time="2014-09-22T10:03:35.3132701Z" id="923f30c5-4b10-4e15-9995-91cd0b5b0a15" type="0">
+      <message>Deleting file: 'diagnostics\LogFiles\Application\3b8c72-7640-stderr-1411378597412.txt'</message>
+    </entry>
+    <entry time="2014-09-22T10:03:35.3288944Z" id="eb4b081f-eb1c-4ba1-b153-7c14f47d76e4" type="0">
+      <message>Deleting file: 'diagnostics\LogFiles\Application\3b8c72-848-stderr-1411378828166.txt'</message>
+    </entry>
+    <entry time="2014-09-22T10:03:35.3445192Z" id="0cd02688-fb09-4b5d-a6a7-d2f6fcaf8487" type="0">
+      <message>Deleting file: 'diagnostics\LogFiles\Application\3b8c72-9232-stderr-1411378550101.txt'</message>
+    </entry>
+    <entry time="2014-09-22T10:03:35.3601443Z" id="f6d0183c-d888-438f-ad4e-623ac378e67d" type="0">
+      <message>Deleting file: 'diagnostics\LogFiles\Application\3b8c72-9736-stderr-1411378571476.txt'</message>
+    </entry>
+    <entry time="2014-09-22T10:03:35.3757701Z" id="01dc5365-e477-4eb8-a530-3a0abb2a6a17" type="0">
+      <message>Deleting file: 'diagnostics\LogFiles\Application\index.html'</message>
+    </entry>
+    <entry time="2014-09-22T10:03:35.3913947Z" id="bd7c77c7-c6b7-4a40-9bbc-79919bfb7b05" type="0">
+      <message>Deleting file: 'diagnostics\LogFiles\Application\logging-errors.txt'</message>
+    </entry>
+    <entry time="2014-09-22T10:03:35.4070204Z" id="fd4c3aa4-179d-4127-8a32-8449f464ed4f" type="0">
+      <message>Deleting directory: 'diagnostics\LogFiles\Application'</message>
+    </entry>
+    <entry time="2014-09-22T10:03:35.4226443Z" id="79aed421-5323-4361-a4b1-52f95a06100a" type="0">
+      <message>Deleting file: 'diagnostics\LogFiles\DetailedErrors\ErrorPage000001.htm'</message>
+    </entry>
+    <entry time="2014-09-22T10:03:35.4382702Z" id="f8185f7e-46b3-4f60-aa2f-791f457be4ab" type="0">
+      <message>Deleting file: 'diagnostics\LogFiles\DetailedErrors\ErrorPage000002.htm'</message>
+    </entry>
+    <entry time="2014-09-22T10:03:35.4538938Z" id="79ff319c-e00e-425e-aba1-207dcb1e7738" type="0">
+      <message>Deleting file: 'diagnostics\LogFiles\DetailedErrors\ErrorPage000003.htm'</message>
+    </entry>
+    <entry time="2014-09-22T10:03:35.4695193Z" id="b2d68142-fb43-4aca-82fa-fd0b335f9862" type="0">
+      <message>Deleting file: 'diagnostics\LogFiles\DetailedErrors\ErrorPage000004.htm'</message>
+    </entry>
+    <entry time="2014-09-22T10:03:35.4851452Z" id="a4035aa6-2c8e-4bb6-95d2-cac66ec1fe09" type="0">
+      <message>Deleting file: 'diagnostics\LogFiles\DetailedErrors\ErrorPage000005.htm'</message>
+    </entry>
+    <entry time="2014-09-22T10:03:35.5007691Z" id="0ebb6537-463c-476e-9f06-a16ca66b39db" type="0">
+      <message>Deleting file: 'diagnostics\LogFiles\DetailedErrors\ErrorPage000006.htm'</message>
+    </entry>
+    <entry time="2014-09-22T10:03:35.5320361Z" id="adb8a24f-aac5-4a95-ba4a-05c6b8941c7b" type="0">
+      <message>Deleting file: 'diagnostics\LogFiles\DetailedErrors\ErrorPage000007.htm'</message>
+    </entry>
+    <entry time="2014-09-22T10:03:35.5476462Z" id="9374439b-e28c-499b-88ee-0a4bdb6ef804" type="0">
+      <message>Deleting file: 'diagnostics\LogFiles\DetailedErrors\ErrorPage000008.htm'</message>
+    </entry>
+    <entry time="2014-09-22T10:03:35.5632716Z" id="ffe69799-967c-4ccf-b1eb-1a6a3f308f0d" type="0">
+      <message>Deleting file: 'diagnostics\LogFiles\DetailedErrors\ErrorPage000009.htm'</message>
+    </entry>
+    <entry time="2014-09-22T10:03:35.5945212Z" id="9c24c8e0-a07e-4bd2-a0a6-45cbf056d3dd" type="0">
+      <message>Deleting file: 'diagnostics\LogFiles\DetailedErrors\ErrorPage000010.htm'</message>
+    </entry>
+    <entry time="2014-09-22T10:03:35.6104304Z" id="a222ffd4-7d7b-4fbf-967f-9f598296f3a3" type="0">
+      <message>Deleting file: 'diagnostics\LogFiles\DetailedErrors\ErrorPage000011.htm'</message>
+    </entry>
+    <entry time="2014-09-22T10:03:35.6413996Z" id="e69aaaa0-a489-40bc-b1d4-dd4d6612a861" type="0">
+      <message>Deleting file: 'diagnostics\LogFiles\DetailedErrors\ErrorPage000012.htm'</message>
+    </entry>
+    <entry time="2014-09-22T10:03:35.6570578Z" id="2a03374c-33ae-4dfa-93bb-9a7d4f7f290f" type="0">
+      <message>Deleting file: 'diagnostics\LogFiles\DetailedErrors\ErrorPage000013.htm'</message>
+    </entry>
+    <entry time="2014-09-22T10:03:35.6886634Z" id="9be7d4ec-b4f7-48f5-a630-6306c8797b27" type="0">
+      <message>Deleting file: 'diagnostics\LogFiles\DetailedErrors\ErrorPage000014.htm'</message>
+    </entry>
+    <entry time="2014-09-22T10:03:35.7047433Z" id="80730d9d-b9d1-4346-b808-cc831acfae56" type="0">
+      <message>Deleting file: 'diagnostics\LogFiles\DetailedErrors\ErrorPage000015.htm'</message>
+    </entry>
+    <entry time="2014-09-22T10:03:35.7507724Z" id="b0380283-9e29-47f7-9072-dd9b2b963daa" type="0">
+      <message>Deleting file: 'diagnostics\LogFiles\DetailedErrors\ErrorPage000016.htm'</message>
+    </entry>
+    <entry time="2014-09-22T10:03:35.7664318Z" id="830598f3-210b-475f-b35b-dea208666099" type="0">
+      <message>Omitting next output lines...</message>
+    </entry>
+    <entry time="2014-09-22T10:03:37.2235612Z" id="f521d5cb-d0fc-4ab8-a0cb-b78979e4138a" type="0">
+      <message>Looking for app.js/server.js under site root.</message>
+    </entry>
+    <entry time="2014-09-22T10:03:37.2391854Z" id="73fe64fb-0f88-4d01-bcdd-d79f736b0669" type="0">
+      <message>Using start-up script server.js</message>
+    </entry>
+    <entry time="2014-09-22T10:03:37.2704308Z" id="e0987440-4e81-4fcc-ad70-f3055684eac4" type="0">
+      <message>Generated web.config.</message>
+    </entry>
+    <entry time="2014-09-22T10:03:37.2860614Z" id="d2ef2b1d-973b-403a-ba73-a124d6bdfd61" type="0">
+      <message>The package.json file does not specify node.js engine version constraints.</message>
+    </entry>
+    <entry time="2014-09-22T10:03:37.3016793Z" id="65cf2e87-e8ac-4bde-9d32-0033905a641f" type="0">
+      <message>The node.js application will run with the default node.js version 0.10.29.</message>
+    </entry>
+    <entry time="2014-09-22T10:03:38.1923187Z" id="4cc19f00-9f58-4fee-9a3f-309576a6366f" type="1">
+      <message>npm WARN package.json Chat@0.0.0 No repository field.</message>
+    </entry>
+    <entry time="2014-09-22T10:03:38.911073Z" id="a97c8179-e734-45b4-aac2-f1d6971893cc" type="0">
+      <message>Finished successfully.</message>
+    </entry>
+  </entry>
+  <entry time="2014-09-22T10:03:38.9735633Z" id="fb46306f-c9a1-43b6-9693-c0cb319aacde" type="0">
+    <message>Deployment successful.</message>
+  </entry>
+</entries>
