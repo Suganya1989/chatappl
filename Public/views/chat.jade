@@ -1,0 +1,24 @@
+doctype
+html
+    head
+        script(src="/socket.io/socket.io.js")
+        script(src="http://code.jquery.com/jquery-2.1.1.min.js")
+        link(rel='stylesheet',href='../bootstrap.css')
+        meta(name="viewport",content="width=device-width, initial-scale=1")
+        style(type="text/css")
+            |.maintext{
+            |margin: 20px;
+            |position: relative;
+            |}
+    body
+        nav(class="navbar navbar-default", role="navigation")
+            div( class="container-fluid")
+                div(class="navbar-header")
+                    a(class="navbar-brand",href="#") ChatApp :)
+                    div(class="navbar-brand",href="#") Welcome
+                    a(class="navbar-brand",href="#") Sign out
+        div(class="container-fluid")
+            div(class="row")
+                input(type="text",class="col-md-6 maintext col-md-offset-3 input-lg",placeholder="Enter your message")
+            div(class="row")
+                button(class="btn btn-primary maintext btn-lg col-xs-6 col-md-offset-4 col-md-4",id="btnSend") Send
