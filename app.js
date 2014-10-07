@@ -43,4 +43,4 @@ app.get('/auth/google/return',
   });
 
 server.listen(port);
-app.listen(server);
+app.listen(port);
