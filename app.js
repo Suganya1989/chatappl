@@ -2,7 +2,7 @@ var express= require('express');
 var app= express()
 var http = require('http')
 var server = http.createServer(app);
-var io = require('socket.io')().listen(server);
+//var io = require('socket.io')().listen(server);
 var url =require('url');
 var path= require('path');
 var passport= require('passport');
@@ -18,7 +18,6 @@ var googlepassport = require('./passportGoogle.js');
 var urlhost;
 
 app.get('/', function(req,res){
-    urlhost=req.get('host');
     res.render("index");
 });
 
@@ -45,4 +44,3 @@ app.get('/auth/google/return',
 
 server.listen(port);
 app.listen(server);
-module.exports.urlhost=urlhost;
