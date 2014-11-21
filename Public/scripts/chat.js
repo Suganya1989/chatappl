@@ -34,19 +34,36 @@ function sendMsg() {
   var queryParams = getUrlVars();
   if (document.getElementById('FileBox').value !== "") {
 
-    var FReader = new FileReader();
-    console.log(FReader);
-    //document.getElementById('UploadArea').innerHTML = Content;
-    FReader.onload = function (evnt) {
+    //   var FReader = new FileReader();
+    //   console.log(FReader);
+    //   //document.getElementById('UploadArea').innerHTML = Content;
+    //   FReader.onload = function (evnt) {
+    //
+    //     socket.emit('Upload', {
+    //       'Name': SelectedFile.name,
+    //       Data: evnt.target.result,
+    //       room: queryParams.room,
+    //       nickname: queryParams.nickname
+    //     });
+    //   };
+    //   FReader.readAsText(SelectedFile);
+    var formData = new FormData();
 
-      socket.emit('Upload', {
-        'Name': SelectedFile.name,
-        Data: evnt.target.result,
-        room: queryParams.room,
-        nickname: queryParams.nickname
-      });
+    formData.append('file', SelectedFile);
+
+
+    // now post a new XHR request
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', '/upload');
+    xhr.onload = function () {
+      if (xhr.status === 200) {
+        console.log('all done: ' + xhr.status);
+      } else {
+        console.log('Something went terribly wrong...');
+      }
     };
-    FReader.readAsText(SelectedFile);
+
+    xhr.send(formData);
   }
 
   var msg = {
@@ -57,6 +74,7 @@ function sendMsg() {
   socket.emit('msg', msg);
 
   $("#txtMsg").val("");
+  document.getElementById('FileBox').value = "";
 }
 
 function getUrlVars() {
@@ -83,6 +101,6 @@ function Ready() {
 var SelectedFile;
 
 function FileChosen(evnt) {
-  SelectedFile = evnt.target.files[0];
+  SelectedFile = this.files[0];
   console.log(SelectedFile);
 }

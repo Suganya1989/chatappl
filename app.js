@@ -5,13 +5,13 @@ var http = require('http');
 var fs = require('fs');
 var url = require('url');
 var path = require('path');
-
+var dateFormat = require('dateformat');
 var port = process.env.PORT || 3838;
-
+var now = new Date();
 app.set('views', __dirname + '/public/views');
 app.set('view engine', 'jade');
 app.use(express.static(path.join(__dirname, 'public')));
-
+dateFormat.masks.hammerTime = 'HH:MM';
 app.get('/', function (req, res) {
   res.render("index");
 });
@@ -25,7 +25,7 @@ app.get('/Files/:filename', function (req, res) {
 
 
 app.post('/upload', function (req, res) {
-  console.log(req);
+  //  console.log(req);
 });
 
 app.all('/:action', function (req, res) {});
@@ -35,6 +35,8 @@ var io = require('socket.io')();
 io.listen(server);
 io.on('connection', function (socket) {
   console.log("socket created");
+  var datetime = new Date();
+
   socket.on('RoomCreated', function (data) {
     socket.emit('joinedroom', data.name);
   });
@@ -44,11 +46,13 @@ io.on('connection', function (socket) {
     socket.join(socket.room);
     console.log(data.msg);
     socket.emit('NewMsg', {
-      msg: data.nickname + " : " +
+      msg: dateFormat(now, "hammerTime") + " - " + data.nickname +
+        " : " +
         data.msg
     });
     socket.in(data.room).emit('NewMsg', {
-      msg: data.nickname + " : " +
+      msg: dateFormat(now, "hammerTime") + " - " + data.nickname +
+        " : " +
         data.msg
     });
 
