@@ -15,7 +15,7 @@ html
             |height:200px;
             |}
             |.scroll{
-            |overflow-y:auto;
+            |overflow:auto;
             |}
     body
         nav(class="navbar navbar-default", role="navigation")
@@ -26,10 +26,11 @@ html
                         span(id="idWelcome") Welcome
                     div(class="container-fluid")
             div(class="row")
-                input(type="text",class="col-md-6 maintext col-md-offset-3 input-lg",id="txtMsg",placeholder="Enter your message")
+                input(type="text",class="col-md-6 maintext col-md-offset-3 input-lg",id="txtMsg",placeholder="Enter your message",onkeypress="runScript(event)")
+                input(type="file" id="FileBox" value="Attach File" name="fileInputElement" class="btn btn-primary maintext btn-lg")
             div(class="row")
                 button(class="btn btn-primary maintext btn-lg col-xs-6 col-md-offset-4 col-md-4",id="btnSend") Send
         div(class="container-fluid scroll")
-            div(class="row")
-                div(class="col-md-6 maintext col-md-offset-3 messcls",id="idMessages")
+            div(class="row scroll")
+                div(class="col-md-6 maintext col-md-offset-3 messcls scroll",id="idMessages")
         script(src="./scripts/chat.js" type="text/javascript")

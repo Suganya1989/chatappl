@@ -13,21 +13,51 @@ $(document).ready(function () {
   $("#idWelcome").append(" " + queryParams.nickname);
 
 });
-
+window.addEventListener("load", Ready);
 $("#btnSend").click(function () {
-  var queryParams = getUrlVars();
-  var msg = {
-    msg: $("#txtMsg").val(),
-    room: queryParams.room,
-    nickname: queryParams.nickname
-  };
-  socket.emit('msg', msg);
+  sendMsg();
 });
 socket.on('NewMsg', function (data) {
   $("#idMessages").prepend(
     "<div class=\"col-md-6 col-md-offset-3 maintext messcls\">" + data.msg +
     "</div>");
 });
+
+function runScript(e) {
+  if (e.keyCode == 13) {
+    sendMsg();
+  }
+}
+
+
+function sendMsg() {
+  var queryParams = getUrlVars();
+  if (document.getElementById('FileBox').value !== "") {
+
+    var FReader = new FileReader();
+    console.log(FReader);
+    //document.getElementById('UploadArea').innerHTML = Content;
+    FReader.onload = function (evnt) {
+
+      socket.emit('Upload', {
+        'Name': SelectedFile.name,
+        Data: evnt.target.result,
+        room: queryParams.room,
+        nickname: queryParams.nickname
+      });
+    };
+    FReader.readAsText(SelectedFile);
+  }
+
+  var msg = {
+    msg: $("#txtMsg").val(),
+    room: queryParams.room,
+    nickname: queryParams.nickname
+  };
+  socket.emit('msg', msg);
+
+  $("#txtMsg").val("");
+}
 
 function getUrlVars() {
   var vars = [],
@@ -39,4 +69,20 @@ function getUrlVars() {
     vars[hash[0]] = hash[1];
   }
   return vars;
+}
+
+
+function Ready() {
+  if (window.File && window.FileReader) { //These are the relevant HTML5 objects that we are going to use
+    document.getElementById('FileBox').addEventListener('change', FileChosen);
+  } else {
+    document.getElementById('UploadArea').innerHTML =
+      "Your Browser Doesn't Support The File API Please Update Your Browser";
+  }
+}
+var SelectedFile;
+
+function FileChosen(evnt) {
+  SelectedFile = evnt.target.files[0];
+  console.log(SelectedFile);
 }

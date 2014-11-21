@@ -2,9 +2,7 @@ var express = require('express');
 var app = express();
 var url = require('url');
 var http = require('http');
-
-
-
+var fs = require('fs');
 var url = require('url');
 var path = require('path');
 
@@ -21,6 +19,15 @@ app.get('/', function (req, res) {
 app.get('/:viewname', function (req, res) {
   res.render(req.params.viewname);
 });
+app.get('/Files/:filename', function (req, res) {
+  res.sendfile("Files/" + req.params.filename);
+});
+
+
+app.post('/upload', function (req, res) {
+  console.log(req);
+});
+
 app.all('/:action', function (req, res) {});
 var server = http.createServer(app).listen(port);
 
@@ -31,11 +38,7 @@ io.on('connection', function (socket) {
   socket.on('RoomCreated', function (data) {
     socket.emit('joinedroom', data.name);
   });
-  // socket.on('joinedchat',function(data){
-  //   socket.room = data.room;
-  //   socket.join(socket.room);
-  //
-  // });
+
   socket.on('msg', function (data) {
     socket.room = data.room;
     socket.join(socket.room);
@@ -49,6 +52,23 @@ io.on('connection', function (socket) {
         data.msg
     });
 
+  });
+  socket.on('Upload', function (data) {
+    socket.room = data.room;
+    socket.join(socket.room);
+    fs.writeFile("./Files/" + data.Name, data.Data, function (err) {
+      msg1 = "<a href=/Files/" + data.Name + " target='_blank'>" +
+        data.Name +
+        "</a>";
+      socket.emit('NewMsg', {
+        msg: data.nickname + " : " + msg1
+      });
+      socket.in(data.room).emit('NewMsg', {
+        msg: data.nickname + " : " + msg1
+      });
+      if (err) throw err;
+      console.log('It\'s saved!');
+    });
   });
 
 
