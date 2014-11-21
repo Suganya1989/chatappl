@@ -7,7 +7,7 @@ var url = require('url');
 var path = require('path');
 var dateFormat = require('dateformat');
 var port = process.env.PORT || 3838;
-var now = new Date();
+
 app.set('views', __dirname + '/public/views');
 app.set('view engine', 'jade');
 app.use(express.static(path.join(__dirname, 'public')));
@@ -34,6 +34,7 @@ var server = http.createServer(app).listen(port);
 var io = require('socket.io')();
 io.listen(server);
 io.on('connection', function (socket) {
+  var now = new Date();
   console.log("socket created");
   var datetime = new Date();
 
