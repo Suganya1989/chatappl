@@ -48,12 +48,12 @@ io.on('connection', function (socket) {
     socket.join(socket.room);
     console.log(data.msg);
     socket.emit('NewMsg', {
-      msg: dateFormat(now, "hammerTime") + " - " + data.nickname +
+      msg: dateFormat(new Date(), "hammerTime") + " - " + data.nickname +
         " : " +
         data.msg
     });
     socket.in(data.room).emit('NewMsg', {
-      msg: dateFormat(now, "hammerTime") + " - " + data.nickname +
+      msg: dateFormat(new Date(), "hammerTime") + " - " + data.nickname +
         " : " +
         data.msg
     });
