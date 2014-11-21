@@ -34,7 +34,7 @@ var server = http.createServer(app).listen(port);
 var io = require('socket.io')();
 io.listen(server);
 io.on('connection', function (socket) {
-  var now = new Date();
+
   console.log("socket created");
   var datetime = new Date();
 
@@ -43,6 +43,7 @@ io.on('connection', function (socket) {
   });
 
   socket.on('msg', function (data) {
+    var now = new Date();
     socket.room = data.room;
     socket.join(socket.room);
     console.log(data.msg);
