@@ -1,10 +1,14 @@
-$("#idGoogle").click(function(){
-    var url=$(location).attr('href');
-    url=url+'auth/google';
-    window.location.replace(url);
-});
+$("#btnRoom").click(function () {
 
-var socket=io.connect();
-io.on('profile',function(data){
-    console.log(profile);
-})
+  var socket = io.connect();
+  var room = {
+    name: $("#idRoom").val(),
+    owner: $("#idEmail").val(),
+    nickname: $("#idName").val()
+  };
+  socket.emit('RoomCreated', room);
+  socket.on('joinedroom', function (data) {
+    window.location.href = '/chat?room=' + $("#idRoom").val() +
+      "&nickname=" + $("#idName").val();
+  });
+});

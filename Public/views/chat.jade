@@ -7,18 +7,29 @@ html
         meta(name="viewport",content="width=device-width, initial-scale=1")
         style(type="text/css")
             |.maintext{
-            |margin: 20px;
+            |margin: 10px;
             |position: relative;
+            |}
+            |.messCls{
+            |font-size: xx-large;
+            |height:200px;
+            |}
+            |.scroll{
+            |overflow-y:auto;
             |}
     body
         nav(class="navbar navbar-default", role="navigation")
             div( class="container-fluid")
                 div(class="navbar-header")
                     a(class="navbar-brand",href="#") ChatApp :)
-                    div(class="navbar-brand",href="#") Welcome
-                    a(class="navbar-brand",href="#") Sign out
-        div(class="container-fluid")
+                    div(class="navbar-brand",href="#")
+                        span(id="idWelcome") Welcome
+                    div(class="container-fluid")
             div(class="row")
-                input(type="text",class="col-md-6 maintext col-md-offset-3 input-lg",placeholder="Enter your message")
+                input(type="text",class="col-md-6 maintext col-md-offset-3 input-lg",id="txtMsg",placeholder="Enter your message")
             div(class="row")
                 button(class="btn btn-primary maintext btn-lg col-xs-6 col-md-offset-4 col-md-4",id="btnSend") Send
+        div(class="container-fluid scroll")
+            div(class="row")
+                div(class="col-md-6 maintext col-md-offset-3 messcls",id="idMessages")
+        script(src="./scripts/chat.js" type="text/javascript")

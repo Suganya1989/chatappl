@@ -26,7 +26,6 @@ html
          | margin-bottom:10px;
          |}
 
-
     body
         nav(class="navbar navbar-default", role="navigation")
             div( class="container-fluid")
@@ -37,33 +36,16 @@ html
             div(class="row")
                 div(class="col-md-6 col-xs-6")
                     h2 Chat with family and friends securely!!!
-            div(class="container-fluid maindiv")
-                div(class="row")
-                    div(class="mycontent-left col-md-6 col-xs-6")
-                        div
-                            h4 Sign in with
-                    div(class="col-md-6 col-xs-6")
-                        h4 or with ChatAppID
-                div(class="row")
-                    div(class="mycontent-left col-md-6 col-xs-6")
-                        //hr(class="vertical")
-                        button(class="btnText btn-google btn btn-primary btn-lg" id="idGoogle") Google
-                    div(class="col-md-6 col-xs-6")
-                        input(type="email",class="btnText maintext form-control",placeholder="Enter your Email Id")
-                div(class="row")
-                    div(class="mycontent-left col-md-6 col-xs-6")
-                        button(class=" btn-google btnText btn btn-primary btn-lg" id="idFb") Facebook
-                        //p(class="myContent col-md-2 col-md-offset-3") (or)
-                    div(class="col-md-6 col-xs-6")
-                        input(type="password",class="btnText maintext form-control",placeholder="Enter your password")
-                div(class="row")
-                    div(class="mycontent-left col-md-6 col-xs-6")
-                        button(class=" btn-google btnText btn btn-primary btn-lg" id="idTwitter") Twitter
-                    div(class="col-md-6 col-xs-6")
-                        button(class=" btn-google btnText btn btn-primary btn-lg") Sign in
-                 div(class="row")
-                    div(class="mycontent-left col-md-6 col-xs-6")
-                        p(class="mycontent-left")
-                    div(class="mycontent-right col-md-6 col-xs-6")
-                        a(href="#") Register now
+            div(class="row")
+                div(class="col-md-6 col-xs-6")
+                    input(type="email" id="idEmail" class="btnText maintext form-control",placeholder="Enter your Email Id")
+            div(class="row")
+                div(class="col-md-6 col-xs-6")
+                    input(type="text" id="idName" class="btnText maintext form-control",placeholder="Enter your chat name(Nickname)")
+            div(class="row")
+                div(class="col-md-6 col-xs-6")
+                    input(type="text" id="idRoom" class="btnText maintext form-control",placeholder="Enter your private chat room name")
+            div(class="row")
+                div(class="col-md-6 col-xs-6")
+                    button(class="btn-google btnText btn btn-primary btn-lg" id="btnRoom") Create room
         script(src="./scripts/client.js" type="text/javascript")
