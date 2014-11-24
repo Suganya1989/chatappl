@@ -5,6 +5,8 @@ html
         script(src="../lib/require/build/require.js")
         script(src="/socket.io/socket.io.js")
         link(rel='stylesheet',href='../bootstrap.css')
+        link(rel='stylesheet',href="../lib/bootstrap-material-design/dist/css/ripples.css")
+        link(rel='stylesheet',href="../lib/bootstrap-material-design/dist/css/material-wfont.min.css")
         meta(name="viewport",content="width=device-width, initial-scale=1")
         style(type="text/css")
             |.maintext{
@@ -23,19 +25,23 @@ html
             |width:150px:
             |}
     body
-        nav(class="navbar navbar-default", role="navigation")
+        nav(class="navbar navbar-inverse", role="navigation")
             div( class="container-fluid")
                 div(class="navbar-header")
-                    a(class="navbar-brand",href="#") ChatApp :)
+                    a(class="navbar-brand withripple",href="#") ChatApp :)
                     div(class="navbar-brand",href="#")
                         span(id="idWelcome") Welcome
-                    div(class="container-fluid")
+        div(class="container-fluid")
             div(class="row")
-                input(type="text",class="col-md-6 maintext col-md-offset-3 input-lg",id="txtMsg",placeholder="Enter your message",onkeypress="runScript(event)")
-                input(type="file",id="FileBox",value="Attach File",name="fileInputElement",accept="image/*",class="btn btn-primary maintext btn-lg")
-            div(class="row")
-                button(class="btn btn-primary maintext btn-lg col-xs-6 col-md-offset-4 col-md-4",id="btnSend") Send
+                input(type="text",class="col-md-6 col-md-offset-1 maintext  input-lg form-control floating-label",id="txtMsg",placeholder="Enter your message",onkeypress="runScript(event)")
+                i(id="File",value="Attach File",class="mdi-file-attachment btn btn-primary maintext btn-lg",onclick="document.getElementById('FileBox').click();")
+                span
+                    label(id="attachedFiles")
+                i(class=" mdi-content-send btn btn-primary maintext btn-lg",onclick="sendMsg()",id="btnSend")
+                input(type="file",id="FileBox",style="visibility: hidden;",name="fileInputElement",accept="image/*")        
         div(class="container-fluid scroll")
             div(class="row scroll")
                 div(class="col-md-6 maintext col-md-offset-3 messcls scroll",id="idMessages")
         script(src="./scripts/chat.js" type="text/javascript")
+        script(src="../lib/bootstrap-material-design/dist/js/ripples.js" type="text/javascript")
+        script(src="../lib/bootstrap-material-design/dist/js/material.js" type="text/javascript")

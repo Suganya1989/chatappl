@@ -29,6 +29,7 @@ socket.on('NewImageMsg', function (data) {
     "<div class=\"col-md-6 col-md-offset-3 maintext messcls\">" + data.from +
     " : " + "<img class=\"imgClass\" src=\"" + data.msg + "\"/>" +
     "</div>");
+  document.getElementById('attachedFiles').innerHTML = "";
 });
 
 function runScript(e) {
@@ -92,5 +93,9 @@ var SelectedFile;
 
 function FileChosen(evnt) {
   SelectedFile = evnt.target.files[0];
+  if (SelectedFile === undefined) {
+    document.getElementById('attachedFiles').innerHTML = "";
+  }
+  document.getElementById('attachedFiles').innerHTML = SelectedFile.name;
   console.log(SelectedFile);
 }
