@@ -1,4 +1,5 @@
 var socket = io.connect();
+
 $(document).ready(function () {
   var queryParams = getUrlVars();
 
@@ -23,6 +24,13 @@ socket.on('NewMsg', function (data) {
     "</div>");
 });
 
+socket.on('NewImageMsg', function (data) {
+  $("#idMessages").prepend(
+    "<div class=\"col-md-6 col-md-offset-3 maintext messcls\">" + data.from +
+    " : " + "<img class=\"imgClass\" src=\"" + data.msg + "\"/>" +
+    "</div>");
+});
+
 function runScript(e) {
   if (e.keyCode == 13) {
     sendMsg();
@@ -33,47 +41,29 @@ function runScript(e) {
 function sendMsg() {
   var queryParams = getUrlVars();
   if (document.getElementById('FileBox').value !== "") {
-
-    //   var FReader = new FileReader();
-    //   console.log(FReader);
-    //   //document.getElementById('UploadArea').innerHTML = Content;
-    //   FReader.onload = function (evnt) {
-    //
-    //     socket.emit('Upload', {
-    //       'Name': SelectedFile.name,
-    //       Data: evnt.target.result,
-    //       room: queryParams.room,
-    //       nickname: queryParams.nickname
-    //     });
-    //   };
-    //   FReader.readAsText(SelectedFile);
-    var formData = new FormData();
-
-    formData.append('file', SelectedFile);
-
-
-    // now post a new XHR request
-    var xhr = new XMLHttpRequest();
-    xhr.open('POST', '/upload');
-    xhr.onload = function () {
-      if (xhr.status === 200) {
-        console.log('all done: ' + xhr.status);
-      } else {
-        console.log('Something went terribly wrong...');
-      }
+    var file = SelectedFile;
+    var fr = new FileReader();
+    fr.onload = function (evt) {
+      socket.emit('file2', {
+        data: evt.target.result,
+        room: queryParams.room,
+        nickname: queryParams.nickname
+      });
     };
+    fr.readAsDataURL(file);
 
-    xhr.send(formData);
   }
+  if ($("#txtMsg").val() !== "") {
+    var msg = {
+      msg: $("#txtMsg").val(),
+      room: queryParams.room,
+      nickname: queryParams.nickname
+    };
+    socket.emit('msg', msg);
 
-  var msg = {
-    msg: $("#txtMsg").val(),
-    room: queryParams.room,
-    nickname: queryParams.nickname
-  };
-  socket.emit('msg', msg);
+    $("#txtMsg").val("");
 
-  $("#txtMsg").val("");
+  }
   document.getElementById('FileBox').value = "";
 }
 
@@ -101,6 +91,6 @@ function Ready() {
 var SelectedFile;
 
 function FileChosen(evnt) {
-  SelectedFile = this.files[0];
+  SelectedFile = evnt.target.files[0];
   console.log(SelectedFile);
 }

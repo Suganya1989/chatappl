@@ -7,7 +7,6 @@ var url = require('url');
 var path = require('path');
 var dateFormat = require('dateformat');
 var port = process.env.PORT || 3838;
-
 app.set('views', __dirname + '/public/views');
 app.set('view engine', 'jade');
 app.use(express.static(path.join(__dirname, 'public')));
@@ -59,22 +58,20 @@ io.on('connection', function (socket) {
     });
 
   });
-  socket.on('Upload', function (data) {
+  socket.on('file2', function (data) {
     socket.room = data.room;
     socket.join(socket.room);
-    fs.writeFile("./Files/" + data.Name, data.Data, function (err) {
-      msg1 = "<a href=/Files/" + data.Name + " target='_blank'>" +
-        data.Name +
-        "</a>";
-      socket.emit('NewMsg', {
-        msg: data.nickname + " : " + msg1
-      });
-      socket.in(data.room).emit('NewMsg', {
-        msg: data.nickname + " : " + msg1
-      });
-      if (err) throw err;
-      console.log('It\'s saved!');
+
+
+    socket.emit('NewImageMsg', {
+      from: dateFormat(new Date(), "hammerTime") + " - " + data.nickname,
+      msg: data.data
     });
+    socket.in(data.room).emit('NewImageMsg', {
+      from: dateFormat(new Date(), "hammerTime") + " - " + data.nickname,
+      msg: data.data
+    });
+
   });
 
 
