@@ -11,7 +11,7 @@ $(document).ready(function () {
 
   socket.emit('msg', msg);
 
-  $("#idWelcome").append(" " + queryParams.nickname);
+  $("#idWelcome").append("Welcome " + queryParams.nickname);
 
 });
 window.addEventListener("load", Ready);
@@ -20,7 +20,8 @@ $("#btnSend").click(function () {
 });
 socket.on('NewMsg', function (data) {
   $("#idMessages").prepend(
-    "<div class=\"col-md-6 col-md-offset-3 maintext messcls\">" + data.msg +
+    "<div class=\"col-md-6 col-md-offset-3 bscomponent maintext messcls\">" +
+    data.msg +
     "</div>");
 });
 
