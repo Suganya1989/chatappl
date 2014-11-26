@@ -20,14 +20,14 @@ $("#btnSend").click(function () {
 });
 socket.on('NewMsg', function (data) {
   $("#idMessages").prepend(
-    "<div class=\"col-md-6 col-md-offset-3 bscomponent maintext messcls\">" +
+    "<div class=\"col-md-6 col-md-offset-2 bscomponent maintext messcls\">" +
     data.msg +
     "</div>");
 });
 
 socket.on('NewImageMsg', function (data) {
   $("#idMessages").prepend(
-    "<div class=\"col-md-6 col-md-offset-3 maintext messcls\">" + data.from +
+    "<div class=\"col-md-6 col-md-offset-2 maintext messcls\">" + data.from +
     " : " + "<img class=\"imgClass\" src=\"" + data.msg + "\"/>" +
     "</div>");
   document.getElementById('attachedFiles').innerHTML = "";
