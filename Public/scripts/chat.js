@@ -9,7 +9,7 @@ $(document).ready(function () {
     nickname: queryParams.nickname
   };
 
-  socket.emit('msg', msg);
+  socket.emit('joinmsg', msg);
 
   $("#idWelcome").append("Welcome " + queryParams.nickname);
 
@@ -23,6 +23,18 @@ socket.on('NewMsg', function (data) {
     "<div class=\"col-md-4 col-md-offset-3 bscomponent maintext messcls\">" +
     data.msg +
     "</div>");
+  if (data.oldmsg) {
+    var res = data.oldmsg.split("||");
+    for (i = res.length - 1; i >= 0; i--) {
+      if (res[i]) {
+        $("#idMessages").append(
+          "<div class=\"col-md-4 col-md-offset-3 bscomponent maintext messcls\">" +
+          res[i] +
+          "</div>");
+      }
+    }
+  }
+
 });
 
 socket.on('NewImageMsg', function (data) {

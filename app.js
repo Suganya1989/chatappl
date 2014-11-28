@@ -45,7 +45,16 @@ io.on('connection', function (socket) {
     var now = new Date();
     socket.room = data.room;
     socket.join(socket.room);
-    console.log(data.msg);
+
+    fs.appendFile('./chat_messages/' + socket.room + ".chat",
+
+      dateFormat(new Date(), "hammerTime") + " - " + data.nickname +
+      " : " +
+      data.msg + "||",
+      function (err) {
+        console.log(err);
+      });
+
     socket.emit('NewMsg', {
       msg: dateFormat(new Date(), "hammerTime") + " - " + data.nickname +
         " : " +
@@ -56,6 +65,35 @@ io.on('connection', function (socket) {
         " : " +
         data.msg
     });
+
+  });
+  socket.on('joinmsg', function (data) {
+    var now = new Date();
+    var oldmsg = '';
+    socket.room = data.room;
+    socket.join(socket.room);
+    fs.readFile('./chat_messages/' + data.room + '.chat',
+      function (err, readData) {
+        if (readData) {
+          oldmsg = readData.toString();
+        }
+        socket.emit('NewMsg', {
+          msg: dateFormat(new Date(), "hammerTime") + " - " +
+            data.nickname +
+            " : " +
+            data.msg,
+          oldmsg: oldmsg
+        });
+
+        socket.in(data.room).emit('NewMsg', {
+          msg: dateFormat(new Date(), "hammerTime") + " - " +
+            data.nickname +
+            " : " +
+            data.msg,
+          oldmsg: oldmsg
+        });
+      });
+
 
   });
   socket.on('file2', function (data) {
